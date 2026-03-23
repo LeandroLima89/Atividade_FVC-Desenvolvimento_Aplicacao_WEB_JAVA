@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conversão de Moeda</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Informe o valor e selecione para qual moeda deseja converter:</h1>
+        <form action="ConverterValor" method="POST">
+            Valor em Reais: <input type="text" name="valor" value="" /><br><br>
+            Escolha a moeda:
+            <select name="moeda">
+                <option value="fs">Franco Suiço</option>
+                <option value="le">Libra Esterlina</option>
+                <option value="dolar">Dolar</option>
+                <option value="ma">Marco Alemão</option>
+            </select><br><br>
+            <input type="submit" value="Converter" />
+        </form>
+        
+    </body>
+</html>
