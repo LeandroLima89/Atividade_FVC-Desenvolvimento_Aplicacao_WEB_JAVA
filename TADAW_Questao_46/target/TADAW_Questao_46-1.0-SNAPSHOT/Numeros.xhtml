@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <title>Conjunto de Números</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h:form>
+            <h2>Informe 100 números aleatórios:</h2>
+            <ui:repeat value="#{numeroBean.numeros}" var="num" varStatus="status">
+                <h:outputLabel value="Número #{status.index + 1}:" style="margin-right: 10px;" />
+                <h:inputText value="#{numeroBean.numeros[status.index]}" style="margin-bottom: 10px;" />
+                <br/>
+            </ui:repeat>
+
+            <h:commandButton value="Processar" action="#{numeroBean.processar}" />
+        </h:form>
+
+        <h:panelGroup rendered="#{not empty numeroBean.numerosGeral}">
+            <h3>Todos os números:</h3>
+            <h:outputText value="#{numeroBean.numerosGeral}" /><br/>
+
+            <h3>Apenas positivos:</h3>
+            <h:outputText value="#{numeroBean.positivos}" />    
+        </h:panelGroup>
+    </body>
+</html>
