@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Pesquisa Senhor dos Anéis</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:commandButton value="Carregar Dados" action="#{pesquisaBean.carregarDados}" />
+        <h:commandButton value="Calcular Resultados" action="#{pesquisaBean.calcularResultados}" />
+    </h:form>
+
+    <h:panelGroup rendered="#{pesquisaBean.mediaIdadeExcelente ne 0}">
+        <h3>Resultados:</h3>
+        <p>Média das idades (Excelente): #{pesquisaBean.mediaIdadeExcelente}</p>
+        <p>Quantidade de Regular: #{pesquisaBean.qtdRegular}</p>
+        <p>Percentual Excelente: #{pesquisaBean.percExcelente}%</p>
+        <p>Percentual Bom: #{pesquisaBean.percBom}%</p>
+        <p>Percentual Regular: #{pesquisaBean.percRegular}%</p>
+    </h:panelGroup>
+</h:body>
+</html>

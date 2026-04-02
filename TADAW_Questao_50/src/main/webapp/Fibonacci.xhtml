@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Série de Fibonacci</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h2>Gerar Série de Fibonacci:</h2>
+
+        <h:outputLabel value="Quantidade de termos: " />
+        <h:inputText value="#{fibonacciBean.quantidade}" /><br/><br/>
+
+        <h:commandButton value="Gerar" action="#{fibonacciBean.gerarFibonacci}" />
+    </h:form>
+
+    <h:panelGroup rendered="#{not empty fibonacciBean.serie}">
+        <h3>Série:</h3>
+        <ui:repeat value="#{fibonacciBean.serie}" var="num">
+            <h:outputText value="#{num}" /> <br/>
+        </ui:repeat>
+    </h:panelGroup>
+</h:body>
+</html>

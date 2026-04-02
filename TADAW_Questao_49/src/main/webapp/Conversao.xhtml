@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Tabela Celsius-Fahrenheit</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>Informe os limites e decremento:</h2>
+
+            <h:outputLabel value="Limite Superior (°C): " />
+            <h:inputText value="#{conversaoBean.limiteSuperior}" /><br/><br/>
+
+            <h:outputLabel value="Limite Inferior (°C): " />
+            <h:inputText value="#{conversaoBean.limiteInferior}" /><br/><br/>
+
+            <h:outputLabel value="Decremento: " />
+            <h:inputText value="#{conversaoBean.decremento}" /><br/><br/>
+
+            <h:commandButton value="Gerar Tabela" action="#{conversaoBean.calcular}" />
+        </h:form>
+
+        <h:panelGroup rendered="#{not empty conversaoBean.tabela}">
+            <h3>Tabela de Conversão:</h3>
+            <ui:repeat value="#{conversaoBean.tabela}" var="linha">
+                <h:outputText value="#{linha}" /><br/>
+            </ui:repeat>
+        </h:panelGroup>
+    </h:body>
+</html>
