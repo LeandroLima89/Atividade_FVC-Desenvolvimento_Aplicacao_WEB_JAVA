@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Gestão de Funcionários</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h3>Cadastro de Funcionário</h3>
+            Nome: <h:inputText value="#{empresaBean.novo.nome}" /><br/><br/>
+            Sexo: <h:inputText value="#{empresaBean.novo.sexo}" /><br/><br/>
+            Idade: <h:inputText value="#{empresaBean.novo.idade}" /><br/><br/>
+            Bairro: <h:inputText value="#{empresaBean.novo.bairro}" /><br/><br/>
+            Peso: <h:inputText value="#{empresaBean.novo.peso}" /><br/><br/>
+            Altura: <h:inputText value="#{empresaBean.novo.altura}" /><br/><br/>
+            Cargo: <h:inputText value="#{empresaBean.novo.cargo}" /><br/><br/>
+            Salário Bruto: <h:inputText value="#{empresaBean.novo.salarioBruto}" /><br/><br/>
+            Encargos: <h:inputText value="#{empresaBean.novo.encargos}" /><br/><br/>
+            Acréscimos: <h:inputText value="#{empresaBean.novo.acrescimos}" /><br/><br/>
+            <h:commandButton value="Salvar Funcionário" action="#{empresaBean.salvarFuncionario}" />
+        </h:form>
+
+        <h:panelGroup rendered="#{empresaBean.indice eq 3}">
+            <h3>Resultados:</h3>
+            <p>Transporte (Brotas, Nazaré, Bonocô) = #{empresaBean.contarTransporte()}</p>
+            <p>Funcionários com salário entre 200 e 500  = #{empresaBean.contarBonus()}</p>
+            <p>Média do peso = #{empresaBean.mediaPeso()}</p>
+            <p>Média da idade = #{empresaBean.mediaIdade()}</p>
+            <p>Funcionários aptos para basquete = #{empresaBean.contarBasquete()}</p>
+            <p>Total da folha (salário líquido) = #{empresaBean.totalFolha()}</p>
+            <p>Quantidade de Gerentes =  #{empresaBean.contarGerentes()}</p>
+            <p>Quantidade de Secretárias  =  #{empresaBean.contarSecretarias()}</p>
+            <p>Nova secretária escolhida  = #{empresaBean.novaSecretaria()}</p>
+        </h:panelGroup>
+    </h:body>
+</html>
